@@ -1,0 +1,370 @@
+delete from librarians;
+delete from members;
+delete from address;
+delete from book;
+delete from Technique_Report;
+delete from thesis;
+delete from magazines;
+delete from documents;
+
+
+
+insert into Librarians values('A0001', 'james', 'jame1', 'ja@gmail.com');
+insert into Librarians values('A0002', 'robert', 'robert','rob@gmail.com');
+insert into Librarians values('A0003', 'john', 'john5', 'john@gmail.com');
+insert into Librarians values('A0004', 'michael', 'michael1', 'michael@gmail.com');
+insert into Librarians values('A0005', 'william', 'william1', 'william@gmail.com');
+insert into Librarians values('A0006', 'mary', 'mary2','mary@gmail.com');
+insert into Librarians values('A0007', 'patrica', 'patrica3','patrica@gmail.com');
+insert into Librarians values('A0008', 'jennifer','jennifer6', 'jennifer@gmail.com');
+insert into Librarians values('A0009', 'linda', 'linda10', 'linda@gmail.com');
+
+
+insert into members values ('M0001', 'Pamela@yahoo.com', 'Pamela', '123');
+insert into members values ('M0002', 'Emma@yahoo.com', 'Emma', '123');
+insert into members values ('M0003', 'Debra@yahoo.com', 'Debra', '123');
+insert into members values ('M0004', 'Janet@yahoo.com', 'Janet', '123');
+insert into members values ('M0005', 'Diane@yahoo.com', 'Diane', '123');
+insert into members values ('M0006', 'Nathan@yahoo.com', 'Nathan', '123');
+insert into members values ('M0007', 'Alexander@yahoo.com', 'Alexander', '123');
+insert into members values ('M0008', 'Patrick@yahoo.com', 'Patrick', '123');
+
+insert into  Keeps_track_of values('A0001', 'M0001');
+insert into  Keeps_track_of values('A0004', 'M0003');
+insert into  Keeps_track_of values('A0007', 'M0005');
+insert into  Keeps_track_of values('A0009', 'M0007');
+insert into  Keeps_track_of values('A0008', 'M0008');
+
+
+
+
+
+
+
+
+insert into address values
+('AD001', 'A0001', NULL, '695 Center Avenue', null, 'Fresno', 'California','93711');
+insert into address values
+('AD002', 'A0002', NULL, '2889 Hillview Street', null, 'Cayce', 'South Carolina','29033');
+insert into address values
+('AD003', 'A0003', NULL, '2203 Frosty Lane', null, 'Stamford', 'New York','12167');
+insert into address values
+('AD004', 'A0004', NULL, '1920 Bridge Street', null, 'Sapulpa', 'Oklahoma','74066');
+insert into address values
+('AD005', 'A0005', NULL, '4597 New York Avenue', '568', 'Bakersfield', 'California','93312');
+insert into address values
+('AD006', 'A0006', NULL, '3864 Rose Avenue', null, 'Marrero', 'Louisiana','70072');
+insert into address values
+('AD007', 'A0007', NULL, '2878 Berkshire Circle', null, 'Knoxville', 'Tennessee','37929');
+insert into address values
+('AD008', 'A0008', NULL, '1105 Hiney Road', null, 'Las Vegas', 'Nevada','89102');
+insert into address values
+('AD009', 'A0009', NULL, '2113 Cherry Ridge Drive', null, 'Portville', 'New York','14770');
+
+
+insert into address values
+('AD010', NULL, 'M0001', '201 Mount Tabor', '102', 'Westbury', 'New York','11590');
+
+insert into address values
+('AD011', NULL, 'M0002', '1835 Huntz Lane', null, 'Enochs', 'Texas','79324');
+
+insert into address values
+('AD012', NULL, 'M0003', '1083 Liberty Avenue', '111', 'Santa Ana', 'California','92704');
+
+insert into address values
+('AD013', NULL, 'M0004', '3031 Arbor Court', null, 'Wheatland', 'Wyoming','82201');
+
+insert into address values
+('AD014', NULL, 'M0005', '1148 Williams Avenue', null, 'Edwards', 'California','93523');
+
+insert into address values
+('AD015', NULL, 'M0006', '4756 Ashmor Drive', null, 'International Falls', 'Minnesota','56649');
+
+insert into address values
+('AD016', NULL, 'M0007', '1699 Scenicview Drive', null, 'Athens', 'Texas','75751');
+
+insert into address values
+('AD017', NULL, 'M0008', '4283 Sunrise Road', null, 'Henderson', 'Nevada','89014');
+
+insert into documents values ('B0001', 'Book1-2', 'book', 'food');
+
+insert into documents values  ('B0002', 'Book1-3', 'book', 'science');
+
+
+
+insert into Book values
+('B0001', '035822358X', 'Baking with Dorie: Sweet, Salty & Simple', 20211019);
+
+insert into author_Document values ('B0001', 'Dorie Greenspan');
+insert into author_Document values ('B0001', 'Siana Cairns');
+
+insert into key_words values  ('B0001', 'cake');
+insert into key_words values  ('B0001', 'bake');
+insert into key_words values  ('B0001', 'flour');
+insert into citation values  ('B0001', 'Where is the flour?', 'book', 'Alys Keenan', 20041005);
+insert into citation values  ('B0001', 'How to baking in a good way', 'thesis', 'Sherry Vincent', 20080705);
+
+
+insert into book values
+('B0002', '0134293932', 'Chemistry: Structure and Properties',  20170109);
+
+insert into author_Document values ('B0002', 'Nivaldo Tro');
+insert into author_Document values ('B0002', 'Pedro Crosby');
+
+insert into key_words values  ('B0002', 'chemistry');
+insert into key_words  values ('B0002', 'science');
+insert into key_words values  ('B0002', 'structure');
+insert into citation values  ('B0002', 'indroduction to chemistry', 'book', 'Mercedes Currie', 20061105);
+insert into citation values  ('B0002', 'apply structure for chemistry', 'thesis', 'Caprice Blackburn', 20140305);
+
+
+
+insert into documents values  ('B0003', 'Book1-4', 'book', 'science');
+
+insert into book values
+('B0003', '1260084507', 'Database System Concepts',  20190426 );
+
+insert into author_Document values ('B0003', 'Abraham Silberschatz');
+insert into author_Document values ('B0003', 'Bree Couch');
+
+insert into key_words values  ('B0003', 'database');
+insert into key_words values  ('B0003', 'data');
+insert into key_words values  ('B0003', 'design');
+insert into citation values  ('B0003', 'indroduction to computer science', 'book', 'Leela Rooney', 20161105);
+insert into citation values  ('B0003', 'big data', 'thesis', 'Angelo Blevins', 20170305);
+
+insert into documents values  ('B0004', 'Book2-7', 'book', 'life');
+
+insert into book values
+('B0004', '0735211299', 'Habits', 20181016);
+
+insert into author_Document values ('B0004', 'James Clear');
+insert into author_Document values ('B0004', 'Aasiyah Steadman');
+
+insert into key_words values  ('B0004', 'habits');
+insert into key_words values  ('B0004', 'life');
+insert into key_words values  ('B0004', 'money');
+insert into citation values  ('B0004', 'the impotance to have a habit', 'book', 'Skyla Magana', 20171015);
+insert into citation values  ('B0004', 'poor dad, rich dad ', 'book', 'Ellesha Gross', 20181105);
+
+
+
+
+
+
+ insert into documents values  ('JA001', 'Journal3-7', 'journal articles', 'biology');
+ 
+ insert into Journal_Articles values
+ ('JA001', 'doi.org/10.1038/s41580-020-0210-7', 
+  'The cell biology of mitochondrial membrane dynamics',  04212020 );
+ 
+ 
+ insert into author_Document values ('JA001', 'Luca Scorrano');
+insert into author_Document values ('JA001', 'Daria Person');
+
+insert into key_words values  ('JA001', 'cell');
+insert into key_words values  ('JA001', 'membrane dynamics');
+insert into key_words values  ('JA001', 'biology');
+insert into citation values  ('JA001', 'Induction of apoptotic program in cell-free extracts', 
+					  'journal articles', 'xing liu', 19961017);
+insert into citation values  ('JA001', 'The role of dynamin-related protein 1, a mediator', 
+					  'thesis', 'Frank, S.', 20151005);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ insert into documents values  ('JA002', 'Journal4-7', 'journal articles', 'chemistry');
+ 
+ 
+  insert into Journal_Articles values
+ ('JA002', 'doi.org/10.1021/jacs.9b05588', 'Total Synthesis as a Vehicle for Collaboration',
+   20190729 );
+  insert into author_Document values ('JA002', 'Neil Garg');
+insert into author_Document values ('JA002', 'Lucas Morrill');
+
+insert into key_words values  ('JA002', 'Total Synthesis');
+insert into key_words values  ('JA002', 'organic chemistry');
+
+insert into citation values  ('JA002', ' From Anion Recognition to Organocatalytic Chemical Reactions', 
+					  'journal articles', 'Nathanyal J. Truax', 20181114);
+insert into citation values  ('JA002', 'Closing the radical gap in chemical synthesis', 
+					  'journal articles', 'ian-Quan Liu', 20161205);
+ 
+ 
+ 
+ 
+ 
+ 
+ insert into documents values  ('JA003', 'Journal1-2', 'journal articles', 'computer science');
+ 
+  insert into Journal_Articles values
+ ('JA003', '10.1109/ACCESS.2018.2877890', 'Benchmark Analysis of Representative Deep Neural Network', 
+   10242018  );
+ 
+insert into author_Document values ('JA003', 'Simone Bianco');
+insert into author_Document values ('JA003', 'Paolo Napoletano');
+
+insert into key_words values  ('JA003', 'Benchmark Analysis');
+insert into key_words values  ('JA003', 'Deep Neural Network');
+
+insert into citation values  ('JA003', ' Intelligent Localization of Transformer Internal Degradations Combining DNN', 
+					  'journal articles', 'Jiajun Duan', 20181114);
+insert into citation values  ('JA003', 'Biometric Recognition Using Multimodal Physiological Signals', 
+					  'journal articles', 'Esra Alhadhrami', 20161205);
+
+
+
+
+
+
+
+
+
+insert into documents values  ('T0001', 'Thesis3-2', 'Thesis', 'animal');
+  
+  
+  insert into Thesis values (
+  'T0001', 'doi.org/10.1013/crghe02f8x', 'animal control with cat', 20011015
+  );
+  
+ insert into author_Document values ('T0001', 'Hadeb Larry');
+
+
+insert into key_words values  ('T0001', 'animal control');
+insert into key_words values  ('T0001', 'cat');
+
+insert into citation values  ('T0001', 'the best way to regulate animals', 
+					  'journal articles', 'Jiajun Duan', 20110514);
+insert into citation values  ('T0001', 'Biometric Recognition Using Multimodal Physiological Signals', 
+					  'journal articles', 'Esra Alhadhrami', 20161205);
+
+  
+
+  
+  insert into documents values  ('T0002', 'Thesis6-2', 'Thesis', 'pet');
+  
+   insert into Thesis values (
+  'T0002', 'doi.org/11.1089/ef900e02f8x', 'pet smart with lifelong caring', 20100306 
+  );
+  
+ insert into author_Document values ('T0002', 'David Perry');
+
+
+insert into key_words values  ('T0002', 'pet smart');
+insert into key_words values  ('T0002', 'care');
+
+insert into citation values  ('T0002', 'how to deal with your dog', 
+					  'book', 'Jasan David', 20010524);
+insert into citation values  ('T0002', 'two signals', 
+					  'book', 'Tom Kim', 20181022);
+  
+  
+  
+  
+  
+  insert into documents values  ('T0003', 'Thesis8-2', 'Thesis', 'home');
+  
+   insert into Thesis values (
+  'T0003', 'doi.org/02.1001/rf0020e02f8x', 'useful tools for home install',19910406 
+  );
+  
+   insert into author_Document values ('T0001', 'Kim Larry');
+
+
+insert into key_words values  ('T0003', 'home');
+insert into key_words values  ('T0003', 'tool');
+
+insert into citation values  ('T0003', 'how to use tool', 
+					  'book', 'jian chen', 20110315);
+insert into citation values  ('T0003', 'home modification', 
+					  'book', 'Larry Bird', 20081022);
+  
+  
+  
+  
+  
+  
+  
+  
+    insert into documents values  ('TR001', 'TR10-2', 'Technique_Report', 'guidence');
+   
+  
+  insert into Technique_Report values ( 'TR001', 'Guidelines for publication Pure fluids (Technical Report)'
+									   , 'doi.org/10.1351/pac199769061237', 20090101 );
+  
+   insert into author_Document values ('TR001', 'U. K. Deiters');
+   insert into author_Document values ('TR001', 'K. M. de Reuck');
+
+  insert into key_words values  ('TR001', 'equations');
+  insert into key_words values  ('TR001', 'Pure fluids');
+
+insert into citation values  ('TR001', 'A new two-constant equation of state', 
+					  'Journal Articles', 'D. Y. Peng', 19760306);
+insert into citation values  ('TR001', 'On the continuity of the gaseous and liquid states, volume XIV ', 
+					  'Journal Articles', 'J. D. van der Waals', 19881015);
+					  
+					
+ insert into documents values  ('TR002', 'TR4-2', 'Technique_Report', 'Microelectrodes');			
+					
+ insert into Technique_Report values ( 'TR002', 'Microelectrodes. Definitions,  and applications (Technical report)'
+									   , 'doi.org/10.1351/pac200072081483', 20090101 );
+  
+   insert into author_Document values ('TR002', 'Karel Stulík');
+   insert into author_Document values ('TR002', 'Wlodzimierz Kutner');
+
+  insert into key_words values  ('TR002', 'Microelectrodes');
+  insert into key_words values  ('TR002', 'chemistry');
+
+insert into citation values  ('TR002', 'icroelectrode  Technique  in  Electrochemistry', 
+					  'Journal Articles', 'Li Sun', 19990306);
+insert into citation values  ('TR002', 'pplication  of  Microelectrodes  in  Kinetics', 
+					  'Journal Articles', 'M. I. Montenegro', 19781015);		
+					  
+  insert into documents values  ('MG001', 'MG5-1', 'magazine', 'fashion');
+					
+ insert into magazines values  ( 'MG001','0093217673',  'People' , 'Dan Wakeford' , 'Jerry Smith',  20200901 );
+  
+   insert into author_Document values ('MG001', 'Jerry Smith');
+   insert into author_Document values ('MG001', 'Dan Wakeford');
+
+  insert into key_words values  ('MG001', 'fashion');
+
+insert into citation values  ('MG001', 'people who need people', 
+					  'Magazine', 'Jill Goldsmith', 20210226);
+
+
+
+
+
+  
+insert into manage values('A0009', 'B0001');
+insert into manage values('A0003', 'B0003');
+insert into manage values('A0008', 'JA001');
+insert into manage values('A0007', 'T0001');
+insert into manage values('A0002', 'T0002');
+insert into manage values('A0006', 'MG001');
+
+
+insert into borrow values('B0001', 'M0001', 20211017, null);
+insert into borrow values('B0001', 'M0005', 20181017, 20180907);
+
+insert into borrow values('T0001', 'M0004', 20211017, 20211201);
+insert into borrow values('JA001', 'M0007', 20141015, 20151102);
+
+
+
+insert into copies values ('B0002', 'C0001', 'Book1-7', 'Yes');
+insert into copies values ('JA002', 'C0002', 'jA1-7', 'No');
+insert into copies values ('B0003', 'C0003', 'Book3-7', 'No');
+insert into copies values ('TR001', 'C0004', 'MG1-7', 'Yes');
+
+
+insert into Borrowed_Copies values ('C0001', 'M0001', 20180203);
+insert into Borrowed_Copies values ('C0002', 'M0006', 20200503);
+insert into Borrowed_Copies values ('C0003', 'M0004', 20210603);
+
+
+

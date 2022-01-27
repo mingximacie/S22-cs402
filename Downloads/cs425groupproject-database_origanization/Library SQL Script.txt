@@ -1,0 +1,173 @@
+create database library;
+
+CREATE TABLE Librarians (
+		L_ID				char(5),
+		name			varchar(20) not null,
+		password		varchar(20) not null,
+		zip				char(9),
+		PRIMARY KEY (L_ID)
+		
+);
+
+
+CREATE TABLE Members (
+		M_ID				char(5),
+		email			varchar(30),
+		name   			varchar(20) not null,
+		zip         	char(9),
+        PRIMARY KEY (M_ID)
+		
+);
+
+
+
+
+CREATE TABLE Documents (
+		D_ID			char(5),
+		location		varchar(30),
+		type			varchar(20),
+		category		varchar(30),
+		PRIMARY KEY (D_ID)	
+);
+
+CREATE table author_Document (
+     D_ID			char(5),
+	 author         varchar(40),
+	 primary key(D_ID, author),
+     foreign key(D_ID) references Documents
+);
+
+
+CREATE TABLE key_words (
+		D_ID  			char(5),
+		key_words		varchar(20),
+		PRIMARY KEY (D_ID, key_words),
+		FOREIGN KEY (D_ID) REFERENCES documents
+);
+
+CREATE TABLE Thesis (
+		D_ID			char(5),
+		DOI				varchar(100),
+		title			varchar(20),
+		publish_date	numeric(8,0),
+		PRIMARY KEY (DOI, D_ID),
+		FOREIGN KEY (D_ID) REFERENCES Documents
+);
+
+CREATE TABLE Book (
+		D_ID			char(5),
+		ISBN			char(10),
+		title			varchar(100),
+		publish_date 	numeric(8,0),
+		PRIMARY KEY (D_ID,ISBN),
+		FOREIGN KEY (D_ID) REFERENCES Documents
+);
+
+CREATE TABLE Technique_Report (
+		D_ID			char(5),
+		title			varchar(100),
+	    DOI             varchar(100),
+	    journal         varchar(100),
+		publish_date	numeric(8,0),
+		PRIMARY KEY(D_ID, DOI),
+		FOREIGN KEY(D_ID) REFERENCES Documents
+);
+
+CREATE TABLE Journal_Articles (
+		D_ID			char(5),
+		DOI				varchar(100),
+		title			varchar(100),
+	    Journal         varchar(100),
+		publish_date	numeric(8,0),
+		PRIMARY KEY(D_ID, DOI),
+		FOREIGN KEY(D_ID) REFERENCES Documents
+);
+
+CREATE TABLE Magazines (
+		D_ID			char(5),
+		ISSN			char(10),
+		title			varchar(100),
+		editor			varchar(20),
+		contributors	varchar(100),
+		publish_date	numeric(8,0),
+		PRIMARY KEY(D_ID,ISSN),
+		FOREIGN KEY(D_ID) REFERENCES Documents
+);
+
+CREATE TABLE Copies (
+		D_ID   			char(5),
+		borrow_time     numeric(8,0),
+		copies_number   numeric(3,0),
+		in_stock_number numeric(3,0),
+		PRIMARY KEY(D_ID, borrow_time),
+		FOREIGN KEY(D_ID) REFERENCES Documents
+);
+
+CREATE TABLE Reserve_Return_History (
+		M_ID			char(5),
+		reserve_date	numeric(8,0),
+		returm_date 	numeric(8,0),
+		PRIMARY KEY(M_ID),
+		FOREIGN KEY(M_ID) REFERENCES Members
+);
+
+
+CREATE TABLE borrow (
+		D_ID			char(5),
+		M_ID			char(5),
+		reserve_date numeric(8,0),
+		return_date numeric(8,0),
+		PRIMARY KEY(D_ID,M_ID),
+		FOREIGN KEY(D_ID) REFERENCES Documents,
+		FOREIGN KEY(M_ID) REFERENCES Members
+);
+
+CREATE TABLE Keeps_track_of (
+		L_ID 			char(5),
+		M_ID 			char(5),
+		PRIMARY KEY (L_ID),
+		FOREIGN KEY (L_ID) REFERENCES Librarians,
+		FOREIGN KEY (M_ID) REFERENCES Members
+);
+
+CREATE TABLE manage (
+		L_ID 			char(5),
+		D_ID 			char(5),
+		PRIMARY KEY (D_ID),
+		FOREIGN KEY (L_ID) REFERENCES Librarians,
+		FOREIGN KEY (D_ID) REFERENCES Documents
+);
+
+CREATE TABLE Citation (
+		D_ID 			char(5),
+		title			varchar(20),
+	    type            varchar(20),
+		author			varchar(20),
+		publish_date	numeric(8,0),
+		PRIMARY KEY (D_ID, title, type),
+		FOREIGN KEY (D_ID) REFERENCES Documents
+);
+
+CREATE TABLE phone_number (
+		ID 				char(5) not null,
+		L_ID 			char(5),
+		M_ID 			char(5),
+		phone_number 	numeric(10,0),
+		PRIMARY KEY (ID),
+		FOREIGN KEY (L_ID) REFERENCES Librarians,
+		FOREIGN KEY (M_ID) REFERENCES Members
+);
+
+CREATE TABLE adress (
+		ID 				char(5) not null,
+		L_ID 			char(5),
+		M_ID 			char(5),
+		street		 	varchar(30) not null,
+		apt_num			varchar(20),
+		city			varchar(20),
+		state			varchar(20),
+		zip				char(9),
+		PRIMARY KEY (ID),
+		FOREIGN KEY (L_ID) REFERENCES Librarians,
+		FOREIGN KEY (M_ID) REFERENCES Members
+);
