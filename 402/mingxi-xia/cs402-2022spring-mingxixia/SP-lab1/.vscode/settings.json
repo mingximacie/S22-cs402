@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.asm": "mips",
+        "stdio.h": "c"
+    }
+}
