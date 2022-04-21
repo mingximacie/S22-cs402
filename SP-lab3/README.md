@@ -5,5 +5,6 @@ Then open terminal, cd to the folder.
 Input:
  
 1. gcc -o basicstats basicstats.c -lm
-3. ./basicstats <input.txt>
+2. ./basicstats <input.txt>
+
 And then follow the menu instruction to input.
