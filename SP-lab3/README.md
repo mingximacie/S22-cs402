@@ -7,4 +7,3 @@ Input:
 1. gcc -o basicstats basicstats.c -lm
 2. ./basicstats <input.txt>
 
-And then follow the menu instruction to input.
